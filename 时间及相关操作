@@ -1,0 +1,28 @@
+现在基本上是用Calendar类（抽象类）代替了Date类
+ Calendar calendar=Calendar.getInstance();//实例化日期
+ calendar.getTimeInMillis(); //等于date.getTime() 用于比较日期大小
+ calendar.set(Calendar.YEAR, 2011);//设置年
+ //时间格式转换
+ String s="20121010";
+ Date date=new Date();
+ SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd");
+ SimpleDateFormat sdf2=new SimpleDateFormat("yyyy年MM月dd日");
+ Date oldDate = sdf.parse(s);
+ String newDate= sdf2.format(date);
+ String olddate=sdf.format(oldDate);
+ //js比较当前时间是否在某个时间段
+ var beginTime="8:00";
+ var endTime="21:00";
+ var strb = beginTime.split (":");
+ var stre = endTime.split (":");
+ var b = new Date ();
+ var e = new Date ();
+ var n = new Date ();
+ b.setHours (strb[0]);
+ b.setMinutes (strb[1]);
+ e.setHours (stre[0]);
+ e.setMinutes (stre[1]);
+ if(n.getTime () - b.getTime () <0 || n.getTime () - e.getTime () > 0){    //t.getTime()方法得到的是从1970到t时间经历的毫秒数；
+           $(".dialog5").show();
+           return false;
+       }
