@@ -23,6 +23,6 @@
  e.setHours (stre[0]);
  e.setMinutes (stre[1]);
  if(n.getTime () - b.getTime () <0 || n.getTime () - e.getTime () > 0){    //t.getTime()方法得到的是从1970到t时间经历的毫秒数；
-           $(".dialog5").show();
+          //不在时间段内；
            return false;
        }
